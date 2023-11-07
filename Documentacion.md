@@ -23,3 +23,4 @@ Eliminar usuario: Un administrador puede eliminar cualquier usuario registrado e
 
 ## Diseño de Bocetos
 ### Home y menús usuarios
+![Imagen Boceto Home](home.jpg)

@@ -22,3 +22,4 @@ Eliminar usuario: Un administrador puede eliminar cualquier usuario registrado e
 ![Imagen caso de uso](casoUso.png)
 
 ## Diseño de Bocetos
+### Home y menús usuarios

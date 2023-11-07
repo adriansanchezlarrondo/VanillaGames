@@ -18,7 +18,6 @@ En esta empresa trabajan 10 desarrolladores y, habitualmente, suelen tener a tre
 - Eliminar usuario: Un administrador puede eliminar cualquier usuario registrado en la plataforma.
 
 ## Diagrma de casos de uso para la versión 1.0
-
 ![Imagen caso de uso](casoUso.png)
 
 ## Diseño de Bocetos

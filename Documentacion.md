@@ -18,11 +18,10 @@ En esta empresa trabajan 10 desarrolladores y, habitualmente, suelen tener a tre
 - Eliminar usuario: Un administrador puede eliminar cualquier usuario registrado en la plataforma.
 
 ## Diagrma de casos de uso para la versión 1.0
-![Imagen caso de uso](casoUso.png)
-
+![Imagen caso de uso](bocetos%5casoUso.png)
 ## Diseño de Bocetos
 ### Home y menús usuarios
-![Imagen Boceto Home](home.jpg)
+![Imagen Boceto Home](bocetos%5home.jpg)
 
 Hemos didivido la interficie en 3 zonas, el encabezado (header), el cuerpo principal (main) y el pie de página (footer).
 
@@ -31,18 +30,18 @@ Hemos didivido la interficie en 3 zonas, el encabezado (header), el cuerpo princ
 * El header será meramente informativo.
 
 ### Regitro de un usuario
-![Imagen Boceto Registro](registro.jpg)
+![Imagen Boceto Registro](bocetos%5registro.jpg)
 ### Iniciar Sesión
-![Imagen Boceto Iniciar Sesión](sesion.jpg)
+![Imagen Boceto Iniciar Sesión](bocetos%5sesion.jpg)
 ### Editar mi Perfil
-![Imagen Boceto Editar Perfil](perfil.jpg)
+![Imagen Boceto Editar Perfil](bocetos%5perfil.jpg)
 
 Editar perfil será una ventana modal, es decir, se mostrará la ventana y el fondo se volverá oscuro.
 
 Esta ventana de edición permitirá, además de modificar los datos del usuario, añadir una imagen de avatar. Por el momento, en esta primera versión, podremos añadir el link de una imagen que esté alojada en un servidor. En la siguiente versión (versión 1.1) actualizaremos esta ventana para que puedan subirse archivos (imágenes) al servidor.
 
 ### Listado de todos los proyectos
-![Imagen Boceto listado Proyectos](listado.jpg)
+![Imagen Boceto listado Proyectos](bocetos%5listado.jpg)
 
 En esta página podemos ver, en la pestaña izquierda, todos los proyectos en forma de tabla. La pestaña derecha mostrará solo los proyectos que ha subido el usuario que ha iniciado la sesión.
 
@@ -53,33 +52,33 @@ También tenemos un buscador que permite buscar proyectos por palabras clave en 
 Las celdas de encabezado de las tablas incluyen un icono (flecha hacia arriba o hacia abajo) que permitirá ordenar la tabla por la columna en concreto.
 
 ### Listado de Mis proyectos
-![Imagen Boceto mis Proyectos](proyectos.jpg)
+![Imagen Boceto mis Proyectos](bocetos%5proyectos.jpg)
 
 En esta pestaña podemos ver los trabajos pertenecientes al usuario logueado. En cada fila aparece, además, un icono para editar y borrar el proyecto correspondiente. Por otro lado tenemos la opción de subir un nuevo proyecto.
 
 Habría que valorar si es mejor crear un único buscador para el nombre y descripción del proyecto o dos barras de busqueda, una para cada sección, tal y como se muestra en el boceto anterior.
 
 ### Detalle de un proyecto
-![Imagen Boceto detalle proyecto](detalle.jpg)
+![Imagen Boceto detalle proyecto](bocetos%5detalle.jpg)
 
 Si el usuario que está viendo la información de un proyecto en concreto es el autor de dicho proyecto, aparecerá un icono para la edición del mismo.
 
 ### Nuevo proyecto / Editar un proyecto
-![Imagen Boceto nuevo/editar proyecto](nuevo.jpg)
+![Imagen Boceto nuevo/editar proyecto](bocetos%5nuevo.jpg)
 
 Esta vista sirve tanto para crear un nuevo proyecto como para editarlo.
 
 Si el proyecto es nuevo, el botón mostrará el texto ENVIAR, pero si estamos editándolo aparecerá el texto ACTUALIZAR. Al crear o actualizar el proyecto, la web nos reenvía a la vista 'Detalle de proyecto'.
 
 ### Panel administración de proyectos
-![Imagen Boceto administracion proyectos](panel.jpg)
+![Imagen Boceto administracion proyectos](bocetos%5panel.jpg)
 
 Si tienes el rol 'administrador' aparecerá el item 'Panel administración' en el menú superior específico. Este item nos permite cargar la vista 'Panel administración de proyectos'. Desde esta vista también podemos acceder al 'Panel administración de usuarios'.
 
 Esta vista permite editar o borrar cualquier proyecto haciendo click en los iconos correspondientes. La opción editar nos llevará a la vista 'Editar proyecto'
 
 ### Panel administración de usuarios
-![Imagen Boceto administracion usuario](panel2.jpg)
+![Imagen Boceto administracion usuario](bocetos%5panel2.jpg)
 
 Esta vista permite editar los datos de los usuarios. Por supuesto es solo accesible para los administradores.
 

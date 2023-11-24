@@ -113,7 +113,7 @@
                         Volver</bottom
                     >
                 </div>
-                <form action="" class="">
+                <form novalidate action="procesa.php" method="get" class="">
                     <div class="row mt-2">
                         <div class="col-12 col-md-4 pt-2 mb-3">
                             <img src="./images/juego.jpg" alt="" class="img-fluid" />
@@ -122,9 +122,10 @@
                             >
                             <input
                                 id="urlImagen"
+                                name="urlImagen"
                                 type="url"
                                 class="form-control"
-                                value="http://enlaceImagen.com"
+                                placeholder="http://enlaceImagen.com"
                                 
                             />
                         </div>
@@ -136,8 +137,9 @@
                             <input
                                 required
                                 id="nombre"
+                                name="nombre"
                                 type="text"
-                                value="Nombre Autor"
+                                placeholder="Nombre Autor"
                                 class="form-control"
                             />
 
@@ -145,8 +147,8 @@
                             <label class="form-label mt-2" for="descripcion"
                                 ><strong>Descripción: </strong></label
                             >
-                            <textarea id="descripcion" class="form-control" rows="4">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, sunt? Recusandae labore at voluptatem tempore incidunt distinctio eaque? Est aspernatur laudantium itaque ullam numquam autem dolor quia amet eum consectetur.</textarea
+                            <textarea id="descripcion" name="descripcion" class="form-control" rows="4" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, sunt? Recusandae labore at voluptatem tempore incidunt distinctio eaque? Est aspernatur laudantium itaque ullam numquam autem dolor quia amet eum consectetur." >
+                                </textarea
                             >
 
                             <!-- Estado -->
@@ -162,7 +164,7 @@
                             <label class="form-label mt-2" for="fecha"
                                 ><strong>Fecha: </strong></label
                             >
-                            <input id="fecha" type="date" class="form-control" value="12/12/2023" />
+                            <input id="fecha" name="fecha" type="date" class="form-control" placeholder="12/12/2023" />
 
                             <!-- Enlace al proyecto -->
                             <label class="form-label mt-2" for="enlace"
@@ -170,9 +172,10 @@
                             >
                             <input
                                 id="enlace"
+                                name="enlace"
                                 type="url"
                                 class="form-control"
-                                value="http://enlace.com"
+                                placeholder="http://enlace.com"
                             />
 
                             <!-- Repositorio -->
@@ -181,9 +184,10 @@
                             >
                             <input
                                 id="repositorio"
+                                name="repositorio"
                                 type="url"
                                 class="form-control"
-                                value="user.github.com/123456"
+                                placeholder="user.github.com/123456"
                             />
 
                             <!-- Submit -->
@@ -222,5 +226,16 @@
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"
         ></script>
+        <script>
+            const formulario = document.querySelector('form')
+            formulario.addEventListener('submit',(event)=>{
+                if(!formulario.checkValidity()){
+                    event.preventDefault()
+                    event.stopPropagation()
+                    console.log('el formulario no valida')
+                    formulario.classList.add('was-validated')
+                }
+            })
+        </script>
     </body>
 </html>

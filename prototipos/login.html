@@ -81,11 +81,11 @@
             <div class="container">
                 <h1 class="mt-5 text-center">Inicia sesión</h1>
                 <div class="m-5 mx-auto" style="max-width: 400px">
-                    <form action="" class="form border shadow-sm p-3">
+                    <form novalidate action="procesa.php" method="get" class="form border shadow-sm p-3">
                         <label for="email" class="form-label">Email:</label>
-                        <input type="email" id="email" class="form-control" required/>
+                        <input id="email" name="email" type="email" class="form-control" required/>
                         <label for="pass" class="form-label mt-3">Contraseña:</label>
-                        <input id="pass" type="password" class="form-control" required minlength="6"/>
+                        <input id="pass" name="pass" type="password" class="form-control" required minlength="6"/>
                         <div class="form-check mt-3">
                             <input
                                 class="form-check-input"
@@ -133,5 +133,16 @@
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"
         ></script>
+        <script>
+            const formulario = document.querySelector('form')
+            formulario.addEventListener('submit',(event)=>{
+                if(!formulario.checkValidity()){
+                    event.preventDefault()
+                    event.stopPropagation()
+                    console.log('el formulario no valida')
+                    formulario.classList.add('was-validated')
+                }
+            })
+        </script>
     </body>
 </html>

@@ -124,33 +124,33 @@
                             id="urlImagen"
                             type="url"
                             class="form-control"
-                            value="http://enlaceImagen.com"
+                            placeholder="http://enlaceImagen.com"
                         />
                     </div>
                     
                     <div class="col-12 col-md-8">
-                        <form action="" class="form">
+                        <form novalidate action="procesa.php" method="get" class="form">
                             <label class="form-label" for="nombre"><strong>Nombre: </strong></label>
-                            <input id="nombre" type="text" value="Nombre Autor" class="form-control" required />
+                            <input id="nombre" name="nombre" type="text" placeholder="Nombre Autor" class="form-control" required />
 
                             <label class="form-label mt-2" for="descripcion"
                                 ><strong>Descripción: </strong></label
                             >
-                            <textarea id="descripcion" class="form-control" rows="4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, sunt? Recusandae labore at voluptatem tempore incidunt distinctio eaque? Est aspernatur laudantium itaque ullam numquam autem dolor quia amet eum consectetur.</textarea>
+                            <textarea id="descripcion" name="descripcion" class="form-control" rows="4" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, sunt? Recusandae labore at voluptatem tempore incidunt distinctio eaque? Est aspernatur laudantium itaque ullam numquam autem dolor quia amet eum consectetur."></textarea>
                             <label class="form-label mt-2" for="estado"><strong>Estado: </strong></label>
                             <select required id="estado" class="form-control">
                                 <option value="estado">estado</option>
                                 <option value="otro estado">otro estado</option>
                             </select>
                             <label class="form-label mt-2" for="fecha"><strong>Fecha: </strong></label>
-                            <input id="fecha" type="date" class="form-control" value="12/12/2023"/>
-                            <label class="form-label mt-2" for="nombre"><strong>Enlace: </strong></label>
-                            <input id="enlace" type="url" class="form-control" value="http://enlace.com" />
-                            <label class="form-label mt-2" for="nombre"
+                            <input id="fecha" name="fecha" type="date" class="form-control" placeholder="12/12/2023"/>
+                            <label class="form-label mt-2" for="enlace"><strong>Enlace: </strong></label>
+                            <input id="enlace" name="enlace" type="url" class="form-control" placeholder="http://enlace.com" />
+                            <label class="form-label mt-2" for="repositorio"
                                 ><strong>Repositorio: </strong></label
                             >
-                            <input id="repositorio" type="url" class="form-control" value="user.github.com/123456" />
-                            <input type="submit" class="btn btn-success mt-3" value="Subir proyecto">
+                            <input id="repositorio" name="repositorio" type="url" class="form-control" placeholder="user.github.com/123456" />
+                            <input type="submit" class="btn btn-success mt-3" placeholder="Subir proyecto">
                         </form>
                     </div>
                 </div>
@@ -182,5 +182,16 @@
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"
         ></script>
+        <script>
+            const formulario = document.querySelector('form')
+            formulario.addEventListener('submit',(event)=>{
+                if(!formulario.checkValidity()){
+                    event.preventDefault()
+                    event.stopPropagation()
+                    console.log('el formulario no valida')
+                    formulario.classList.add('was-validated')
+                }
+            })
+        </script>
     </body>
 </html>

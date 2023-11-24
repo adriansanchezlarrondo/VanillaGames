@@ -118,7 +118,7 @@
                 aria-hidden="true"
             >
             <!-- Formulario de edición de perfil -->
-                <form action="">
+                <form novalidate action="procesa.php" method="get">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -151,6 +151,7 @@
                                             <label for="imagen" class="form-label mt-3">URL imagen:</label>
                                             <input
                                                 id="imagen"
+                                                name="imagen"
                                                 type="url"
                                                 class="form-control"
                                                 value="http://imagenavatar.png"
@@ -231,5 +232,16 @@
             integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
             crossorigin="anonymous"
         ></script>
+        <script>
+            const formulario = document.querySelector('form')
+            formulario.addEventListener('submit',(event)=>{
+                if(!formulario.checkValidity()){
+                    event.preventDefault()
+                    event.stopPropagation()
+                    console.log('el formulario no valida')
+                    formulario.classList.add('was-validated')
+                }
+            })
+        </script>
     </body>
 </html>

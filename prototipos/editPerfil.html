@@ -79,7 +79,7 @@
                                     data-bs-toggle="dropdown"
                                     aria-expanded="false"
                                 >
-                                    <img src="./images/avatar.png" alt="" width="25" />
+                                    <img src="./images/avatar.svg" alt="" width="25" />
                                 </a>
                                 <!-- Menú usuario -->
                                 <ul class="dropdown-menu me-0" style="left: -100px; width: 100px">
@@ -139,7 +139,7 @@
                                             <div
                                                 class="imagen mx-auto mb-1 rounded-circle"
                                                 style="
-                                                    background-image: url(./images/avatar.png);
+                                                    background-image: url(./images/avatar.svg);
                                                     width: 200px;
                                                     height: 200px;
                                                     background-size: cover;
@@ -154,6 +154,7 @@
                                                 type="url"
                                                 class="form-control"
                                                 value="http://imagenavatar.png"
+                                                
                                             />
                                         </div>
 
@@ -173,7 +174,7 @@
                                             
                                             <!-- Contraseña -->
                                             <label for="pass" class="form-label mt-3">Contraseña:</label>
-                                            <input required id="pass" type="password" class="form-control" />
+                                            <input required minlength="6" id="pass" type="password" class="form-control" />
                                         </div>
                                     </div>
                                 </div>

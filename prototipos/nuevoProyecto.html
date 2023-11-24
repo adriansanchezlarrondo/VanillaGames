@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8" />
@@ -86,7 +86,7 @@
                                     data-bs-toggle="dropdown"
                                     aria-expanded="false"
                                 >
-                                    <img src="./images/avatar.png" alt="" width="25" />
+                                    <img src="./images/avatar.svg" alt="" width="25" />
                                 </a>
                                 <ul class="dropdown-menu me-0" style="left: -100px; width: 100px">
                                     <li class="text-light text-center p-2">
@@ -116,30 +116,40 @@
 
                 <div class="row mt-2">
                     <div class="col-12 col-md-4 pt-2 mb-3">
-                        <img src="./images/juego.jpeg" alt="" class="img-fluid" />
+                        <img src="./images/juego.jpg" alt="" class="img-fluid" />
+                        <label class="form-label mt-2" for="urlImagen"
+                            ><strong>URL imagen: </strong></label
+                        >
+                        <input
+                            id="urlImagen"
+                            type="url"
+                            class="form-control"
+                            value="http://enlaceImagen.com"
+                        />
                     </div>
+                    
                     <div class="col-12 col-md-8">
                         <form action="" class="form">
                             <label class="form-label" for="nombre"><strong>Nombre: </strong></label>
-                            <input id="nombre" type="text" value="Nombre Autor" class="form-control" />
+                            <input id="nombre" type="text" value="Nombre Autor" class="form-control" required />
 
                             <label class="form-label mt-2" for="descripcion"
                                 ><strong>Descripción: </strong></label
                             >
                             <textarea id="descripcion" class="form-control" rows="4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, sunt? Recusandae labore at voluptatem tempore incidunt distinctio eaque? Est aspernatur laudantium itaque ullam numquam autem dolor quia amet eum consectetur.</textarea>
                             <label class="form-label mt-2" for="estado"><strong>Estado: </strong></label>
-                            <select id="estado" class="form-control">
+                            <select required id="estado" class="form-control">
                                 <option value="estado">estado</option>
                                 <option value="otro estado">otro estado</option>
                             </select>
                             <label class="form-label mt-2" for="fecha"><strong>Fecha: </strong></label>
                             <input id="fecha" type="date" class="form-control" value="12/12/2023"/>
                             <label class="form-label mt-2" for="nombre"><strong>Enlace: </strong></label>
-                            <input id="enlace" type="text" class="form-control" value="http://enlace.com" />
+                            <input id="enlace" type="url" class="form-control" value="http://enlace.com" />
                             <label class="form-label mt-2" for="nombre"
                                 ><strong>Repositorio: </strong></label
                             >
-                            <input id="repositorio" type="text" class="form-control" value="user.github.com/123456" />
+                            <input id="repositorio" type="url" class="form-control" value="user.github.com/123456" />
                             <input type="submit" class="btn btn-success mt-3" value="Subir proyecto">
                         </form>
                     </div>

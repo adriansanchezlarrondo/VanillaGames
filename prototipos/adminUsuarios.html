@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/yeti/bootstrap.min.css"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+        />
+        <link rel="stylesheet" href="styles.css" />
+
+        <link rel="stylesheet" href="styles.css" />
+        <title>Prototipos vanilla games</title>
+
+        <style>
+            /* Modificamos aspecto de nav-tabs y nav-links */
+            .nav-tabs,
+            .nav-link.active {
+                border-bottom: 0;
+                /* background-color: red; */
+            }
+        </style>
+    </head>
+    <body class="pt-5" style="overflow-x: hidden; padding-bottom: 100px">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                <div class="container">
+                    <a class="navbar-brand" href="#"
+                        ><img
+                            src="./images/logo.svg"
+                            alt=""
+                            width="30"
+                            height="24"
+                            class="d-inline-block align-text-top"
+                        />
+
+                        Vanilla Games</a
+                    >
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#">TOP5 Proyectos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#">A cerca de</a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav ms-auto me-2 mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">PROYECTOS</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a
+                                    class="nav-link dropdown-toggle"
+                                    href="#"
+                                    role="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                >
+                                    <img src="./images/avatar.svg" alt="" width="25" />
+                                </a>
+                                <ul class="dropdown-menu me-0" style="left: -100px; width: 100px">
+                                    <li class="text-light text-center p-2">
+                                        <p>user@email.com</p>
+                                    </li>
+                                    <li><hr class="dropdown-divider" /></li>
+                                    <li><a class="dropdown-item" href="#">Acciónn</a></li>
+                                    <li><a class="dropdown-item" href="#">Otra acción</a></li>
+                                    <li><hr class="dropdown-divider" /></li>
+                                    <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="container-fluid">
+                <h1 class="mt-5">Panel de administración</h1>
+                <!-- tabs -->
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item w-50">
+                                <a class="nav-link active" aria-current="page" href="#">Usuarios</a>
+                            </li>
+                            <li class="nav-item w-50">
+                                <a class="nav-link" href="#">Proyectos</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- tabla proyectos -->
+                <div class="border border-top-0 p-3">
+                    <!-- buscador -->
+                    <div class="row">
+                        <div class="d-flex col-12 col-md-6 mb-3">
+                            <div class="input-group flex-nowrap">
+                                <span class="input-group-text" id="addon-wrapping"
+                                    ><i class="bi bi-search"></i
+                                ></span>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    placeholder="Buscador"
+                                    aria-label="Username"
+                                    aria-describedby="addon-wrapping"
+                                />
+                                <span class="input-group-text" id="addon-wrapping"
+                                    ><i class="bi bi-x"></i
+                                ></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- tabla usuarios-->
+                    <div class="col-12" style="overflow-x: auto">
+                        <table
+                            class="table table-hover align-middle mt-3"
+                            style="min-width: 1200px"
+                        >
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>
+                                        URL imagen <span><i class="bi bi-caret-down"></i></span>
+                                    </th>
+                                    <th>
+                                        Email <span><i class="bi bi-caret-down"></i></span>
+                                    </th>
+                                    <th>
+                                        Nombre <span><i class="bi bi-caret-up"></i></span>
+                                    </th>
+                                    <th>
+                                        Apellidos <span><i class="bi bi-caret-up"></i></span>
+                                    </th>
+                                    <th>
+                                        Fecha <span><i class="bi bi-caret-up"></i></span>
+                                    </th>
+                                    <th>
+                                        Rol <span><i class="bi bi-caret-up"></i></span>
+                                    </th>
+                                    <th>
+                                        Estado <span><i class="bi bi-caret-up"></i></span>
+                                    </th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+
+                            <tr>
+                                <form novalidate action="procesa.php" method="get">
+                                    <td>
+                                        <div class="containerImagen">
+                                            <div
+                                                class="rounded-circle d-flex align-items-end justify-content-end"
+                                                style="
+                                                    background-image: url(./images/avatar.svg);
+                                                    width: 50px;
+                                                    height: 50px;
+                                                    background-size: cover;
+                                                    background-position: center;
+                                                "
+                                            >
+                                                <i class="btn btn-success btn-sm rounded-circle bi bi-pencil"></i>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input
+                                            type="text"
+                                            class="form-control form-control-sm"
+                                            value="http://imagen.com"
+                                        />
+                                    </td>
+                                    <td>
+                                        <input
+                                            type="emial"
+                                            class="form-control form-control-sm"
+                                            value="email@email.com"
+                                            required
+                                        />
+                                    </td>
+                                    <td>
+                                        <input
+                                            type="text"
+                                            class="form-control form-control-sm"
+                                            value="Nombre usuario"
+                                            required
+                                        />
+                                    </td>
+                                    <td>
+                                        <input
+                                            type="text"
+                                            class="form-control form-control-sm"
+                                            value="Apellidos usuario"
+                                        />
+                                    </td>
+
+                                    <td>
+                                        <input
+                                            type="date"
+                                            class="form-control form-control-sm"
+                                            value="12/12/2023 proyecto"
+                                        />
+                                    </td>
+                                    <td>
+                                        <select required class="form-control form-control-sm" name="" id="">
+                                            <option value="1">opción</option>
+                                            <option value="2">opción2</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select required class="form-control form-control-sm" name="" id="">
+                                            <option value="1">opción</option>
+                                            <option value="2">opción2</option>
+                                        </select>
+                                    </td>
+                                    <td><button class="btn btn-sm btn-success">Actualizar</button></td>
+                                    <td><i class="btn btn-sm btn-outline-danger bi bi-trash3"></i></td>
+                                </form>
+                            </tr>
+                            <tr>
+                                <form action="">
+                                    <td>
+                                        <div class="containerImagen">
+                                            <div
+                                                class="rounded-circle d-flex align-items-end justify-content-end"
+                                                style="
+                                                    background-image: url(./images/avatar.svg);
+                                                    width: 50px;
+                                                    height: 50px;
+                                                    background-size: cover;
+                                                    background-position: center;
+                                                "
+                                            >
+                                                <i class="btn btn-success btn-sm rounded-circle bi bi-pencil"></i>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input
+                                            type="text"
+                                            class="form-control form-control-sm"
+                                            value="http://imagen.com"
+                                        />
+                                    </td>
+                                    <td>
+                                        <input
+                                            type="emial"
+                                            class="form-control form-control-sm"
+                                            value="email@email.com"
+                                            required
+                                        />
+                                    </td>
+                                    <td>
+                                        <input
+                                            type="text"
+                                            class="form-control form-control-sm"
+                                            value="Nombre usuario"
+                                            required
+                                        />
+                                    </td>
+                                    <td>
+                                        <input
+                                            type="text"
+                                            class="form-control form-control-sm"
+                                            value="Apellidos usuario"
+                                        />
+                                    </td>
+
+                                    <td>
+                                        <input
+                                            type="date"
+                                            class="form-control form-control-sm"
+                                            value="12/12/2023 proyecto"
+                                        />
+                                    </td>
+                                    <td>
+                                        <select required class="form-control form-control-sm" name="" id="">
+                                            <option value="1">opción</option>
+                                            <option value="2">opción2</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select required class="form-control form-control-sm" name="" id="">
+                                            <option value="1">opción</option>
+                                            <option value="2">opción2</option>
+                                        </select>
+                                    </td>
+                                    <td><button class="btn btn-sm btn-success">Actualizar</button></td>
+                                    <td><i class="btn btn-sm btn-outline-danger bi bi-trash3"></i></td>
+                                </form>
+                            </tr>
+                            <tr>
+                                <form action="">
+                                    <td>
+                                        <div class="containerImagen">
+                                            <div
+                                                class="rounded-circle d-flex align-items-end justify-content-end"
+                                                style="
+                                                    background-image: url(./images/avatar.svg);
+                                                    width: 50px;
+                                                    height: 50px;
+                                                    background-size: cover;
+                                                    background-position: center;
+                                                "
+                                            >
+                                                <i class="btn btn-success btn-sm rounded-circle bi bi-pencil"></i>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input
+                                            type="text"
+                                            class="form-control form-control-sm"
+                                            value="http://imagen.com"
+                                        />
+                                    </td>
+                                    <td>
+                                        <input
+                                            type="emial"
+                                            class="form-control form-control-sm"
+                                            value="email@email.com"
+                                            required
+                                        />
+                                    </td>
+                                    <td>
+                                        <input
+                                            type="text"
+                                            class="form-control form-control-sm"
+                                            value="Nombre usuario"
+                                            required
+                                        />
+                                    </td>
+                                    <td>
+                                        <input
+                                            type="text"
+                                            class="form-control form-control-sm"
+                                            value="Apellidos usuario"
+                                        />
+                                    </td>
+
+                                    <td>
+                                        <input
+                                            type="date"
+                                            class="form-control form-control-sm"
+                                            value="12/12/2023 proyecto"
+                                        />
+                                    </td>
+                                    <td>
+                                        <select required class="form-control form-control-sm" name="" id="">
+                                            <option value="1">opción</option>
+                                            <option value="2">opción2</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select required class="form-control form-control-sm" name="" id="">
+                                            <option value="1">opción</option>
+                                            <option value="2">opción2</option>
+                                        </select>
+                                    </td>
+                                    <td><button class="btn btn-sm btn-success">Actualizar</button></td>
+                                    <td><i class="btn btn-sm btn-outline-danger bi bi-trash3"></i></td>
+                                </form>
+                            </tr>
+
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="">
+            <nav class="navbar bg-secondary fixed-bottom small">
+                <div class="container">
+                    <a class="navbar-brand" href="http://www.fpllefia.com">
+                        <img
+                            src="./images/logo.svg"
+                            alt="fpllefia"
+                            width="30"
+                            height="24"
+                            class="d-inline-block align-text-top"
+                        />
+                        FPLlefià
+                    </a>
+                    <span class="navbar-text">@Texto de header</span>
+                    <a href="#" class="nav-link">Vínculo header</a>
+                </div>
+            </nav>
+        </footer>
+
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"
+        ></script>
+        <script>
+            const formulario = document.querySelector('form')
+            formulario.addEventListener('submit',(event)=>{
+                if(!formulario.checkValidity()){
+                    event.preventDefault()
+                    event.stopPropagation()
+                    console.log('el formulario no valida')
+                    formulario.classList.add('was-validated')
+                }
+            })
+        </script>
+    </body>
+</html>

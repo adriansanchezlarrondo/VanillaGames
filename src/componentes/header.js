@@ -5,7 +5,7 @@ export const header = {
         <div class="container">
             <a class="navbar-brand" href="#"
                 ><img
-                    src="./images/logo.svg"
+                    src="../img/vanilla.svg"
                     alt=""
                     width="30"
                     height="24"

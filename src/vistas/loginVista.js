@@ -33,7 +33,7 @@ export default {
           </div>
       </div>
     </div>
-    `, // Lógica para loginVista.js #14
+    `,
   script: () => {
     console.log('vista registro cargada')
     // Validación bootstrap

@@ -1,17 +1,21 @@
 export const enrutador = {
+
+  // Objeto (diccionario) con todas las rutas y su vista asociada
   rutas: {
-    home: import('../vistas/homeVista.js'),
+    home: import('../vistas/homeVista'),
     // Usuarios
-    admin: import('../vistas/adminVista.js'),
-    registro: import('../vistas/registroVista.js'),
-    login: import('../vistas/loginVista.js'),
+    admin: import('../vistas/adminVista'),
+    registro: import('../vistas/registroVista'),
+    login: import('../vistas/loginVista'),
     // Proyectos
-    proyectos: import('../vistas/proyectosVista.js'),
-    proyectoNuevo: import('../vistas/proyectoNuevoVista.js'),
-    proyectoEditar: import('../vistas/proyectoEditarVista.js'),
-    proyectoDetalle: import('../vistas/proyectoDetalleVista.js'),
-    404: import('../vistas/404.js')
+    proyectos: import('../vistas/proyectosVista'),
+    proyectoNuevo: import('../vistas/proyectoNuevoVista'),
+    proyectoEditar: import('../vistas/proyectoEditarVista'),
+    proyectoDetalle: import('../vistas/proyectoDetalleVista'),
+    404: import('../vistas/404')
   },
+
+  // Método que obtiene la ruta del navegador
   router: async () => {
     // Capturamos el hash # que ha cambiado en la url
     const pathCompleto = window.location.hash
@@ -24,6 +28,7 @@ export const enrutador = {
     const componenteVista = await enrutador.rutas[path]
     // Si existe la vista la podremos cargar
     if (componenteVista) {
+      // try {
       // Obtenemos el objeto del componente (que fué exportado como default)
       const vista = await componenteVista.default
       // inyectamos vista y ejecutamos su script
@@ -31,10 +36,11 @@ export const enrutador = {
       // A los script les pasamos el parametro que hemos extraido de la ruta. Así podemos pasar, por ejemplo, el id de un proyecto
       vista.script(parametro)
     } else {
-      // Si la vista no existe cargamos la página de error
       window.location = '#/404'
     }
   },
+
+  // Capturamos los eventos
   observadorRutas: () => {
     document.body.addEventListener('click', event => {
       // Evitamos que se cargue la página

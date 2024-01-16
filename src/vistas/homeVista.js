@@ -6,7 +6,7 @@ export default {
       Vanilla Games
     </h1>
     <div class="m-5 mx-auto" style="max-width: 400px">
-      <img src="../img/vanilla.svg" alt="fpllefia" class="img-fluid" />
+      <img src="images/logo.svg" alt="fpllefia" class="img-fluid" />
     </div>
   </div>
   `

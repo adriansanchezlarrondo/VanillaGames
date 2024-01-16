@@ -1,5 +1,6 @@
 export const footer = {
-  template: `
+  template: // html
+  `
   <nav class="navbar bg-secondary fixed-bottom small">
       <div class="container">
           <a class="navbar-brand fs-6" href="http://www.fpllefia.com">

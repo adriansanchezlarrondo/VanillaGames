@@ -35,7 +35,7 @@ export default {
     </div>
     `,
   script: () => {
-    console.log('vista registro cargada')
+    console.log('vista login cargada')
     // Validación bootstrap
 
     // Capturamos el formulario en una variable

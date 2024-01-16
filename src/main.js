@@ -9,7 +9,7 @@ import { enrutador } from './componentes/enrutador'
 
 // Inyectamos el componente header
 document.querySelector('header').innerHTML = header.template
-// header.script()
+header.script()
 // Inyectamos el componente footer
 document.querySelector('footer').innerHTML = footer.template
 

@@ -1,3 +1,6 @@
+// importamos la función ls del archivo funciones
+import { ls } from '../componentes/funciones'
+
 export const header = {
   template: // html
   ` 
@@ -54,5 +57,20 @@ export const header = {
           </div>
       </div>
   </nav>
-  `
+  `,
+  script: () => {
+    console.log('Header cargado')
+
+    // Simulamos el inicio de sesión de un usuario
+    const usuario = {
+      email: 'manolito@email.com',
+      rol: 'alumno'
+    }
+    ls.setUsuario(usuario)
+    console.log('usuario guardado')
+
+    // Leemos el usuario del localstorage
+    const usuarioLogueado = ls.getUsuario()
+    console.log('usuario del localstorage: ', usuarioLogueado)
+  }
 }

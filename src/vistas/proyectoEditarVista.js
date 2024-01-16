@@ -15,7 +15,7 @@ export default {
                 </div>
             </div>
             <div class="col-md-8">
-                <form>
+                <form id="formRegistro">
                     <div class="mb-3">
                         <label for="nombre" class="form-label"><strong>Nombre:</strong></label>
                         <input type="text" class="form-control" id="nombre" value="Nombre Autor">

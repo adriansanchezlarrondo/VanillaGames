@@ -11,7 +11,7 @@ export default {
                 <img class="w-100" src="images/tresraya.jpeg" alt="">
             </div>
             <div class="col-md-6">
-                <form>
+                <form id="formRegistro">
                     <div class="mb-3">
                         <label for="nombre" class="form-label"><strong>Nombre:</strong></label>
                         <input type="text" class="form-control" value="Nombre Autor">

@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist -o 'adriansanchezlarrondo.github.io/VanillaGames.git'"
   },
   "devDependencies": {
     "gh-pages": "^6.1.1",

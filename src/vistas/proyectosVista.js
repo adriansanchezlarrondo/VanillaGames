@@ -1,3 +1,5 @@
+import { proyectos } from '../bd/datosPrueba'
+
 export default {
   template: // html
     `
@@ -43,7 +45,7 @@ export default {
                   <th scope="col"></th>
                 </tr>
               </thead>
-              <tbody class="table-group-divider">
+              <tbody id="tbodyProyectos" class="table-group-divider">
                 <tr>
                   <td scope="row"><img src="images/tres.jpeg" width="60" height="60" alt=""></td>
                   <td>Proyecto ejemplo 1</td>
@@ -86,5 +88,52 @@ export default {
         </div>
       </div>
     </div>
-    `
+    `,
+  script: () => {
+    // Función para pintar tabla a partir de array
+    const pintaTabla = (proyectos) => {
+      let tbodyProyectos = ''
+      // Para cada proyecto del array 'proyectos'
+      proyectos.forEach(proyecto => {
+      // sumamos un tr con los datos del proyecto
+        tbodyProyectos += `
+      <tr>
+        <td>
+          <div class="containerImagen">
+            <img 
+              width="200px" 
+              src=${proyecto.imagen || 'images/imagenVacia.png'} 
+              alt="imagen proyecto" />
+          </div>
+        </td>
+        <td>${proyecto.nombre}</td>
+        <td>${proyecto.descripcion}</td>
+        <td><a href="${proyecto.enlace}"><i class="bi bi-link fs-4"></i></a></td>
+        <td><a href="${proyecto.repositorio}"><i class="bi bi-folder-symlink fs-4"></i></a></td>
+        <td>${proyecto.nombre_usuario} ${proyecto.apellidos_usuario}</td>
+        <td>${proyecto.created_at}</td>
+        <td>${proyecto.estado}</td>
+        <td>
+          <a
+          data-user_id = ${proyecto.user_id}
+          class="d-none d-sm-inline btn btn-sm btn-outline-primary bi bi-pencil"
+          ></a>
+        </td>
+        <td>
+          <a
+            data-user_id = ${proyecto.user_id}
+            class="d-none d-sm-inline btn btn-sm btn-outline-danger bi bi-trash3"
+          ></a>
+        </td>
+      </tr>
+            
+      `
+      })
+      // inyectamos el resultado en el tbody
+      document.querySelector('#tbodyProyectos').innerHTML = tbodyProyectos
+    }
+
+    // Ejecutamos la función
+    pintaTabla(proyectos)
+  }
 }

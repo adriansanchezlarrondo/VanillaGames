@@ -24,6 +24,9 @@
   "eslintConfig": {
     "extends": [
       "./node_modules/standard/eslintrc.json"
-    ]
+    ],
+    "rules": {
+      "arrow-parens": "off" 
+    }
   }
 }

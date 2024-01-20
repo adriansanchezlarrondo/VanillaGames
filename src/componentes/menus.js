@@ -69,7 +69,16 @@ const menuUsuario = {
             ${ls.getUsuario().rol}
           </li>
           <li><hr class="dropdown-divider" /></li>
-          <li><a class="dropdown-item" href="#">Mi perfil</a></li>
+          <li>
+            <a 
+                class="dropdown-item" 
+                href="#"
+                data-bs-toggle="modal"
+                data-bs-target="#modalEditarPerfil"
+                >
+                Mi perfil
+            </a>
+          </li>
           <li><hr class="dropdown-divider" /></li>
           <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
         </ul>

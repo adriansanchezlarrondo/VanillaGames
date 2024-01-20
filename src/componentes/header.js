@@ -1,5 +1,6 @@
 // importamos la función ls del archivo funciones
 import { ls } from '../componentes/funciones'
+import { editarPerfil } from './editPerfil'
 import { menuRol, menuUsuario } from './menus'
 
 export const header = {
@@ -48,13 +49,15 @@ export const header = {
         
         <!-- Aquí va el Menu usuario -->
         <div id="menuUsuario"></div>
-        
+
         </div>
     </div>
     </nav>
+    <div id="modal"></div>
   `,
   script: () => {
     console.log('Header cargado')
+    document.querySelector('#modal').innerHTML = editarPerfil.template
 
     // // Simulamos el inicio de sesión de un usuario
     ls.setUsuario({ email: 'chafardera@gmial.com', rol: 'registrado' })

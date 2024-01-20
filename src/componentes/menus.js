@@ -80,7 +80,7 @@ const menuUsuario = {
             </a>
           </li>
           <li><hr class="dropdown-divider" /></li>
-          <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+          <li><a class="dropdown-item cerrarSesion" href="#">Cerrar sesión</a></li>
         </ul>
       </li>
     </ul>
@@ -108,7 +108,7 @@ const menuUsuario = {
             <li><hr class="dropdown-divider" /></li>
             <li><a class="dropdown-item" href="#">Mi perfil</a></li>
             <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+            <li><a class="dropdown-item cerrarSesion" href="#">Cerrar sesión</a></li>
         </ul>
         </li>
     </ul>
@@ -136,7 +136,7 @@ const menuUsuario = {
             <li><hr class="dropdown-divider" /></li>
             <li><a class="dropdown-item" href="#">Mi perfil</a></li>
             <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+            <li><a class="dropdown-item cerrarSesion" href="#">Cerrar sesión</a></li>
         </ul>
         </li>
     </ul>

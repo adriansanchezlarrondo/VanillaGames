@@ -8,7 +8,7 @@ export const header = {
   `
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand router-link" href="#/home"
+      <a class="navbar-brand " href="#/home"
         ><img
           src="images/logo.svg"
           alt=""
@@ -52,6 +52,9 @@ export const header = {
   `,
   script: () => {
     console.log('Header cargado')
+    // Simulamos el inicio de sesión de un usuario
+    // ls.setUsuario({ email: 'chafardera@gmial.com', rol: 'registrado' })
+
     // Cargamos la ventana modal para editar perfil
     document.querySelector('#modal').innerHTML = editarPerfil.template
     // Y ejecutamos su lógica

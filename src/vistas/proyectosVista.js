@@ -1,5 +1,5 @@
-import { ls } from '../componentes/funciones'
 import { proyectos } from '../bd/datosPrueba'
+import { ls } from '../componentes/funciones'
 
 export default {
   template: // html
@@ -8,7 +8,9 @@ export default {
   <h1 class="mt-5">Proyectos</h1>
   <div class="row mt-5">
     <div class="col-12">
+      <!--nav-tabs-->
       <ul class="nav nav-tabs">
+        <!--Etiqueta Todos los proyectos-->
         <li class="nav-item w-50">
           <button 
             class="selectorFicha fichaProyectos nav-link w-100 active"
@@ -16,6 +18,7 @@ export default {
             Todos los proyectos
           </button>
         </li>
+        <!--Etiqueta Mis proyectos-->
         <li id="pestanyaMisProyectos" class="nav-item w-50">
           <button 
             class="selectorFicha fichaMisProyectos nav-link w-100"
@@ -29,13 +32,16 @@ export default {
   <div class="border border-top-0 p-3">
     <div class="row">
       <div class="col-12 col-sm-4 mb-3">
+      <!-- Boton para subir proyectos -->
         <a id="botonSubirProyecto" href="#/proyectoNuevo" class="btn btn-primary w-100 router-link">Subir proyecto</a>
       </div>
       <div class="d-flex col-12 col-sm-8 mb-3">
+        <!-- Botones para alternar entre vista de tabla o de tarjetas -->
         <button class="vistaTabla btn btn-secondary me-2 bi bi-list">
         </button>
         <button class="vistaTarjetas btn btn-secondary me-2 bi bi-grid-3x3-gap ">
         </button>
+        <!-- Buscador -->
         <div class="input-group flex-nowrap">
           <span class="input-group-text" id="addon-wrapping"
             ><i class="bi bi-search"></i
@@ -55,6 +61,7 @@ export default {
       </div>
     </div>
     
+    <!-- Tabla de proyectos -->
     <div id="tabTabla" class="col-12 d-none d-xl-block" style="overflow-x: auto">
       <table
         class="table table-hover align-middle mt-3"
@@ -87,12 +94,15 @@ export default {
           </tr>
         </thead>
         <tbody id="tbodyProyectos">
+          <!-- Aqui van los datos generados por la lógica -->
           <p>No tienes proyectos</p>
         </tbody>
       </table>
     </div>
 
+    <!-- Panel de tarjetas -->
     <div id="tabTarjetas" class="d-xl-none row">
+      <!-- Aqui van los datos generados por la lógica -->
       <p>No tienes proyectos</p>
     </div>
   </div>
@@ -154,6 +164,7 @@ export default {
         </tr>   
         `
       })
+      // inyectamos el resultado en el tbody
       document.querySelector('#tbodyProyectos').innerHTML = tbodyProyectos
     }
 

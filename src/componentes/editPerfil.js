@@ -1,3 +1,4 @@
+import { ls } from './funciones'
 export const editarPerfil = {
   template: // html
   `
@@ -10,7 +11,7 @@ export const editarPerfil = {
     aria-hidden="true"
   >
     <!-- Formulario de edición de perfil -->
-    <form novalidate action="">
+    <form novalidate id="formularioEditarPerfil" action="">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -31,7 +32,7 @@ export const editarPerfil = {
                   <div
                     class="imagen mx-auto mb-1 rounded-circle"
                     style="
-                      background-image: url(images/usuario.png);
+                      background-image: url(${ls.getUsuario().avatar});
                       width: 200px;
                       height: 200px;
                       background-size: cover;
@@ -42,34 +43,34 @@ export const editarPerfil = {
                   <!-- Imagen de perfil -->
                   <label for="imagen" class="form-label mt-3">URL imagen:</label>
                   <input
-                    id="imagen"
+                    id="avatar"
                     type="url"
                     class="form-control"
-                    value="http://imagenavatar.png"
+                    value="${ls.getUsuario().avatar}"
                   />
                   <div class="invalid-feedback">La url no es correcta</div>
                 </div>
 
                 <div class="">
                   <!-- Nombre -->
-                  <label for="nombre" class="form-label">Nombre:</label>
-                  <input required id="nombre" type="text" class="form-control" />
+                  <label for="nombrePerfil" class="form-label">Nombre:</label>
+                  <input required id="nombrePerfil" type="text" class="form-control" value="${ls.getUsuario().nombre}" />
                   <div class="invalid-feedback">El nombre es requerido</div>
                   <!-- Apellidos -->
-                  <label for="apellidos" class="form-label">Apellidos:</label>
-                  <input id="apellidos" type="text" class="form-control" />
+                  <label for="apellidosPerfil" class="form-label">Apellidos:</label>
+                  <input id="apellidosPerfil" type="text" class="form-control" value = "${ls.getUsuario().apellidos}" />
 
                   <!-- Email -->
-                  <label for="email" class="form-label">Email:</label>
-                  <input required id="email" type="email" class="form-control" />
+                  <label for="emailPerfil" class="form-label">Email:</label>
+                  <input required id="emailPerfil" type="email" class="form-control" value = "${ls.getUsuario().email}" />
                   <div class="invalid-feedback">El formato no es correcto</div>
 
                   <!-- Contraseña -->
-                  <label for="pass" class="form-label mt-3">Contraseña:</label>
+                  <label for="passPerfil" class="form-label mt-3">Nueva contraseña:</label>
                   <input
-                    required
+                    
                     minlength="6"
-                    id="pass"
+                    id="passPerfil"
                     type="password"
                     class="form-control"
                   />
@@ -84,7 +85,7 @@ export const editarPerfil = {
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
               Cancelar
             </button>
-            <button type="button" class="btn btn-primary">Guardar cambios</button>
+            <button id="enviarPerfilEditado" data-id = ${ls.getUsuario().user_id} type="submit" class="btn btn-primary">Guardar cambios</button>
           </div>
         </div>
       </div>
@@ -92,6 +93,38 @@ export const editarPerfil = {
   </div>
   `,
   script: () => {
-    console.log('script de modal editar perfil cargado')
+    console.log('script editar perfil cargado')
+    // Validación bootstrap
+    // Capturamos el formulario en una variable
+    const formulario = document.querySelector('#formularioEditarPerfil')
+    // Detectamos su evento submit (enviar)
+    formulario.addEventListener('submit', (event) => {
+    // Comprobamos si el formulario no valida
+    // Detenemos el evento enviar (submit)
+      event.preventDefault()
+      event.stopPropagation()
+      if (!formulario.checkValidity()) {
+        // formulario no valida
+      } else {
+        //* ** ENVIAMOS DATOS A LA BASE DE DATOS */
+        enviaDatos()
+      }
+      // Y añadimos la clase 'was-validate' para que se muestren los mensajes
+      formulario.classList.add('was-validated')
+    })
+
+    // Función para enviar datos a la base de datos
+    function enviaDatos () {
+      const perfilEditado = {
+        avatar: document.querySelector('#avatar').value,
+        nombre: document.querySelector('#nombrePerfil').value,
+        apellidos: document.querySelector('#apellidosPerfil').value,
+        email: document.querySelector('#emailPerfil').value,
+        contraseña: document.querySelector('#passPerfil').value
+
+      }
+      alert(`Enviando a la base de datos el objeto con id = ${ls.getUsuario().user_id}`)
+      console.log(`Enviando a la base de datos el objeto con user_id = ${ls.getUsuario().user_id}`, perfilEditado)
+    }
   }
 }

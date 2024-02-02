@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { ls } from './funciones'
 export const editarPerfil = {
   template: // html

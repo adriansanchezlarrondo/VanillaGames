@@ -1,4 +1,5 @@
 // importamos la función ls del archivo funciones
+import { User } from '../bd/user'
 import { ls } from '../componentes/funciones'
 import { editarPerfil } from './editPerfil'
 import { menuRol, menuUsuario } from './menus'
@@ -104,6 +105,9 @@ export const header = {
     document.querySelector('header').addEventListener('click', (e) => {
       if (e.target.classList.contains('cerrarSesion')) {
         e.preventDefault()
+
+        // Cerramos sesión en la bd
+        User.logout()
         // Borramos el localstorage
         ls.setUsuario('')
         // Cargamos la pagina home

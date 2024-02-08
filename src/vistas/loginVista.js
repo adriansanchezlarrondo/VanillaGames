@@ -1,4 +1,6 @@
+/* eslint-disable no-undef */
 import { User } from '../bd/user'
+import { Perfil } from '../bd/perfil'
 import { ls } from '../componentes/funciones'
 import { header } from '../componentes/header'
 

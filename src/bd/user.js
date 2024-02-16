@@ -62,8 +62,8 @@ export class User {
   }
 
   // Método para actualizar datos del usuario (no está claro cómo se utiliza actualmente)
-  async update (nuevosDatos) {
-    const { data, error } = await supabase.auth.updateUser({
+  async update () {
+    const { error } = await supabase.auth.updateUser({
       email: this.email,
       password: this.password
     })

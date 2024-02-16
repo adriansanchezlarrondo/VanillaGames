@@ -1,4 +1,5 @@
 import { proyectos } from '../bd/datosPrueba'
+import { Proyecto } from '../bd/proyecto'
 import { ls } from '../componentes/funciones'
 
 export default {
@@ -108,8 +109,20 @@ export default {
   </div>
 </div>
   `,
-  script: () => {
-    const datos = proyectos
+  script: async () => {
+    const datosBd = await Proyecto.getAll()
+    console.log('datos', datosBd)
+    const datos = datosBd.map((dato) => {
+      const fecha = dato.created_at
+      const nuevaFecha = fecha.split('T')[0]
+      const fechaFormateada = `${nuevaFecha.split('-')[2]}/${nuevaFecha.split('-')[1]}/${nuevaFecha.split('-')[0]}`
+      const datoFormateado = {
+        ...dato,
+        created_at: fechaFormateada
+      }
+      return datoFormateado
+    })
+
     // ####################################################################
     // *** SELECCIÓN DE VISTA EN FORMATO TABLA O TARJETAS ***
     // ####################################################################
